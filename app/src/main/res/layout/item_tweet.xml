@@ -14,6 +14,57 @@
         android:layout_marginTop="0dp"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <ImageView
+        android:id="@+id/ivReplyImage"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="17dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/reply"
+        android:src="@drawable/ic_reply" />
+
+    <ImageView
+        android:id="@+id/ivRetweetImage"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvBody"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="183dp"
+        android:layout_marginTop="17dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/retweet"
+        android:src="@drawable/ic_retweet"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/ivFavoriteImage"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="299dp"
+        android:layout_marginTop="17dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/favorite"
+        android:src="@drawable/ic_favorite"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tvTimeOfTweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="1dp"
+        android:layout_marginTop="1dp"
+        android:textColor="#546E7A"
+        android:textSize="12sp"
+        tools:text="Time Of Tweet" />
+
     <TextView
         android:id="@+id/tvScreenName"
         android:layout_width="wrap_content"
@@ -48,19 +99,41 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="1dp"
         android:layout_toEndOf="@+id/tvScreenName"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#546E7A"
         android:textSize="12sp"
         tools:text="\@UserID" />
 
     <TextView
-        android:id="@+id/tvTimeOfTweet"
+        android:id="@+id/tvRetweetCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="1dp"
-        android:layout_marginTop="1dp"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="12sp"
-        tools:text="Time Of Tweet" />
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/ivRetweetImage"
+        android:textColor="#546E7A"
+        tools:text="321" />
+
+    <TextView
+        android:id="@+id/tvFavoriteCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/ivFavoriteImage"
+        android:textColor="#546E7A"
+        tools:text="534" />
+
+    <TextView
+        android:id="@+id/tvReplyCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/ivReplyImage"
+        tools:text="163" />
+
+
 </RelativeLayout>

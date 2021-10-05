@@ -61,18 +61,37 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         ImageView ivProfileImage;
+//        ImageView ivRetweetImage;
+//        ImageView ivReplyImage;
+//        ImageView ivFavoriteImage;
+
         TextView tvBody;
         TextView tvScreenName;
         TextView tvTimeOfTweet;
         TextView tvUserID;
+       // TextView tvReplyCount;
+        TextView tvRetweetCount;
+ //       TextView tvFavoriteCount;
+
         String formattedTime;
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
+//            ivRetweetImage = itemView.findViewById(R.id.ivRetweetImage);
+//            ivReplyImage = itemView.findViewById(R.id.ivReplyImage);
+//            ivFavoriteImage = itemView.findViewById(R.id.ivFavoriteImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
             tvUserID = itemView.findViewById(R.id.tvUserID);
+
+         //   tvReplyCount = itemView.findViewById(R.id.tvReplyCount);
+            tvRetweetCount = itemView.findViewById(R.id.tvRetweetCount);
+      //     tvFavoriteCount = itemView.findViewById(R.id.tvFavoriteCount);
+
             tvTimeOfTweet = itemView.findViewById(R.id.tvTimeOfTweet);
+
 
 
         }
@@ -80,7 +99,13 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         @SuppressLint("SetTextI18n")
         public void bind(Tweet tweet) {
             formattedTime = TimeFormatter.getTimeDifference(tweet.createdAt);
+
             tvBody.setText(tweet.body);
+
+        //  tvReplyCount.setText(tweet.replyCount);
+            tvRetweetCount.setText(tweet.retweetCount);
+        //  tvFavoriteCount.setText(tweet.favoriteCount);
+
             tvScreenName.setText(tweet.user.name);
             tvUserID.setText("@" + tweet.user.screenName);
             tvTimeOfTweet.setText(formattedTime);

@@ -8,6 +8,7 @@ import com.codepath.oauth.OAuthBaseClient;
 import com.github.scribejava.apis.TwitterApi;
 import com.github.scribejava.core.builder.api.BaseApi;
 
+
 /*
  * 
  * This is the object responsible for communicating with a REST API. 
@@ -52,6 +53,15 @@ public class TwitterClient extends OAuthBaseClient {
 		client.get(apiUrl, params, handler);
 	}
 
+	public void publishTweet(String tweetContent, JsonHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("statuses/update.json");
+		// Can specify query string params directly or through RequestParams.
+		RequestParams params = new RequestParams();
+		params.put("status", tweetContent);
+		client.post(apiUrl, params, "", handler);
+	}
+
+
 	public void getNextPageOfTweets(JsonHttpResponseHandler handler, long maxID) {
 		String apiUrl = getApiUrl("statuses/home_timeline.json");
 		// Can specify query string params directly or through RequestParams.
@@ -59,6 +69,22 @@ public class TwitterClient extends OAuthBaseClient {
 		params.put("count", 25);
 		params.put("max_id", maxID);
 		client.get(apiUrl, params, handler);
+	}
+
+	public void retweet(long tweetId, boolean newValue, JsonHttpResponseHandler handler) {
+		String endpoint = newValue ? "retweet" : "unretweet";
+		String apiUrl = getApiUrl("statuses/" + endpoint + "/" + tweetId + ".json");
+		RequestParams params = new RequestParams();
+		params.put("id", tweetId);
+		client.post(apiUrl, String.valueOf(params), handler);
+	}
+
+	public void favorite(long tweetId, boolean newValue, JsonHttpResponseHandler handler) {
+		String endpoint = newValue ? "create" : "destroy";
+		String apiUrl = getApiUrl("favorites/" + endpoint + ".json");
+		RequestParams params = new RequestParams();
+		params.put("id", tweetId);
+		client.post(apiUrl, String.valueOf(params), handler);
 	}
 
 	/* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint
