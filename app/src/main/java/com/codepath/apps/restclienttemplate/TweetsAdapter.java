@@ -71,7 +71,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         TextView tvUserID;
        // TextView tvReplyCount;
         TextView tvRetweetCount;
- //       TextView tvFavoriteCount;
+     //   TextView tvFavoriteCount;
 
         String formattedTime;
 
@@ -88,7 +88,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
 
          //   tvReplyCount = itemView.findViewById(R.id.tvReplyCount);
             tvRetweetCount = itemView.findViewById(R.id.tvRetweetCount);
-      //     tvFavoriteCount = itemView.findViewById(R.id.tvFavoriteCount);
+         //  tvFavoriteCount = itemView.findViewById(R.id.tvFavoriteCount);
 
             tvTimeOfTweet = itemView.findViewById(R.id.tvTimeOfTweet);
 
@@ -104,7 +104,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
 
         //  tvReplyCount.setText(tweet.replyCount);
             tvRetweetCount.setText(tweet.retweetCount);
-        //  tvFavoriteCount.setText(tweet.favoriteCount);
+            //tvFavoriteCount.setText(tweet.favoriteCount);
 
             tvScreenName.setText(tweet.user.name);
             tvUserID.setText("@" + tweet.user.screenName);

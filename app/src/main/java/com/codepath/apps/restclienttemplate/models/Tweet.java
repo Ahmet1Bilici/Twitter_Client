@@ -56,7 +56,7 @@ public class Tweet {
 
            // tweet.replyCount = (jsonObject.getString("reply_count"));
             tweet.retweetCount = (jsonObject.getString("retweet_count"));
-        //    tweet.favoriteCount = (jsonObject.getString("like_count"));
+           // tweet.favoriteCount = (jsonObject.getString("like_count"));
             tweet.id = jsonObject.getLong("id");
 
         }catch(JSONException e){
